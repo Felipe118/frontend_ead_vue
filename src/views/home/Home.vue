@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="pageTitle">
-            <span class="title">Meus Cursos</span>
+            <span class="title">{{}}</span>
             <span class="dots">
                 <span></span>
                 <span></span>
@@ -11,7 +11,7 @@
 
         <div class="content">
             <ul class="listCourses">
-                <card-course/>
+                <card-course :title="'Curso Laravel com Vue.js'" :image="''" bgName="' bg-laravel'" />
             </ul>
         </div>
        

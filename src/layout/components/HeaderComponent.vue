@@ -3,7 +3,7 @@
         <nav>
             <span class="toggleMenu far fa-bars"></span>
             <span class="logo">
-                <img src="images/logo.svg" alt="EspecializaTi">
+                <img src="@/assets/images/logo.svg" alt="EspecializaTi">
             </span>
         </nav>
     </header>

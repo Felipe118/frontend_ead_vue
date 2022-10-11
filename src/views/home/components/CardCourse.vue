@@ -1,12 +1,12 @@
 <template>
   <li>
-    <span class="card bg-laravel">
+    <span :class="['card', 'bg-'+bgName]">
       <span class="icon">
-        <img src="require('@/assets/images/icons/building.png')" alt="" />
+        <img :src="[image != '' ? image : require('@/assets/images/icons/default.png') ]" alt="" />
       </span>
-      <span class="title">Curso LaraFood + VueFood + FlutterFood</span>
+      <span class="title">{{title}}</span>
       <span class="action">
-        <a href="trainings.html" class="btn laravel">Acessar</a>
+        <a href="trainings.html" :class="['btn','bg-']">Acessar</a>
       </span>
     </span>
     <span class="dots">
@@ -18,5 +18,8 @@
 </template>
 
 <script>
-
+export default {
+  name:'CardCourse',
+  props:['title','image','dbName']
+}
 </script>
