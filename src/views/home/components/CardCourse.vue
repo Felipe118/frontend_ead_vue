@@ -1,12 +1,12 @@
 <template>
   <li>
-    <span :class="['card', 'bg-'+bgName]">
+    <span :class="['card', 'bg-'+ bgName]"> 
       <span class="icon">
         <img :src="[image != '' ? image : require('@/assets/images/icons/default.png') ]" alt="" />
       </span>
       <span class="title">{{title}}</span>
       <span class="action">
-        <a href="trainings.html" :class="['btn','bg-']">Acessar</a>
+        <a href="trainings.html" :class="['btn',bgName]">Acessar</a>
       </span>
     </span>
     <span class="dots">
@@ -20,6 +20,6 @@
 <script>
 export default {
   name:'CardCourse',
-  props:['title','image','dbName']
+  props:['title','image','bgName']
 }
 </script>
