@@ -64,7 +64,7 @@ export default {
         const store = useStore()
         //const login = () => router.push({name: 'campus.home'})
 
-        const auth () => {
+        const auth = () => {
             store.dispatch('auth', {
                 email: 'lipebezerraa@gmail.com',
                 password: '123'
