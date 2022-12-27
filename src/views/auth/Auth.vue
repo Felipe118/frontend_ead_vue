@@ -67,12 +67,13 @@ export default {
         const auth = () => {
             store.dispatch('auth', {
                 email: 'lipebezerraa@gmail.com',
-                password: '123'
+                password: '123563',
+                device_name: 'teste'
             })
         }
         
         return {
-            login
+            auth,
         }
     }
 }
