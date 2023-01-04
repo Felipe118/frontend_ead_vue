@@ -1,4 +1,4 @@
-import AuthService from "@/services/AuthService"
+import AuthService from "@/services/auth.service"
 
 export default {
     state: {
@@ -25,9 +25,8 @@ export default {
 
     actions: {
         auth({state},params){
-            console.log(state)
-            console.log(params)
-            AuthService.auth(params)
+            state.loggedIn
+            return AuthService.auth(params)
         }
     },
 }

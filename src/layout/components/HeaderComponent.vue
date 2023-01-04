@@ -2,7 +2,7 @@
    <header id="header">
         <nav>
             <span class="toggleMenu far fa-bars"></span>
-            <router-link :to="{name:campus.home}" >
+            <router-link :to="{name: 'campus.home'}" >
                 <span class="logo">
                     <img :src="require('@/assets/images/logo.svg')" alt="EspecializaTi">
                 </span>

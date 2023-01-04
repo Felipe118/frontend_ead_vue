@@ -1,4 +1,4 @@
-import Http from "./Http.init"
+import Http from "./http.init"
 
 export default class BaseService {
     constructor(){
@@ -8,4 +8,4 @@ export default class BaseService {
     static  request(status = {auth: false}){
         return new Http(status)
     }
-}
+} 

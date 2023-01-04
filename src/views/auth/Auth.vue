@@ -24,14 +24,23 @@
                         <form action="/dist/index.html" method="">
                             <div class="groupForm">
                                 <i class="far fa-envelope"></i>
-                                <input type="email" name="email" placeholder="Email" required>
+                                <input type="email" name="email" placeholder="Email" v-model="email" required>
                             </div>
                             <div class="groupForm">
                                 <i class="far fa-key"></i>
-                                <input type="password" name="password" placeholder="Senha" required>
+                                <input type="password" name="password" v-model="password" placeholder="Senha" required>
                                 <i class="far fa-eye buttom"></i>
                             </div>
-                            <button class="btn primary" type="submit" @click.prevent="auth">Login</button>
+                            <button 
+                            :class="[
+                                'btn',
+                                'primary',
+                                loading ? 'loading' : ''
+                            ]" 
+                            type="submit" @click.prevent="auth">
+                                <span v-if="loading">Enviando...</span>
+                                <span v-else>Login</span>
+                            </button>
                         </form>
                         <span>
                             <p class="fontSmall">Esqueceu sua senha? 
@@ -52,6 +61,8 @@
 import Content from '@/views/auth/component/Content.vue'
 //import router from '@/router'
 import { useStore } from 'vuex'
+import { ref } from '@vue/reactivity'
+import router from '@/router'
 
 export default {
     name: 'Auth',
@@ -62,18 +73,29 @@ export default {
 
     setup() {
         const store = useStore()
-        //const login = () => router.push({name: 'campus.home'})
+
+        const email = ref("")
+        const password = ref("")
+        const loading = ref(false)
+        
 
         const auth = () => {
+            loading.value = true
             store.dispatch('auth', {
-                email: 'lipebezerraa@gmail.com',
-                password: '123563',
-                device_name: 'teste'
+                email: email.value,
+                password: password.value,
+                device_name: 'vue3_web'
             })
+            .then(() => router.push({name: 'campus.home'}))
+            .catch(error => console.log(error))
+            .finally(() =>   loading.value = false)
         }
         
         return {
             auth,
+            email,
+            password,
+            loading
         }
     }
 }
