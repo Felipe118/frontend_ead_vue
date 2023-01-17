@@ -10,7 +10,7 @@ export default class Http{
         const headers = status.auth ? {Authorization: `Bearer ${token}`} : {}
         
          
-        headers
+        // headers
         this.instance = axios.create({
             baseURL: URL_API,
             headers: headers,

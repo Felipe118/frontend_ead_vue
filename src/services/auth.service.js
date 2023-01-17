@@ -9,8 +9,8 @@ export default class AuthService extends BaseService {
         this.request()
             .post('/auth', params)
             .then(response => {
-            localStorage.setItem(TOKEN_NAME, response.data.token)
-              resolve(response)
+              localStorage.setItem(TOKEN_NAME, response.data.token)
+                resolve(response)
             })
             .catch(error => reject(error.response))
       })
